@@ -18,7 +18,7 @@
                       <th scope="col">Titolo</th>
                       <th scope="col">Autore</th>
                       <th scope="col">Immagine</th>
-                      <th scope="col">Data</th>
+                      <th scope="col">Data creazione</th>
                       <th scope="col">Descrizione</th>
                       
                     </tr>
