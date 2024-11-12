@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\PostController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware('auth')->prefix('admin/')->group(function(){
+    Route::resource('posts', PostController::class);
+    Route::get('posts/trash', [PostController::class, 'trashed'])->name('trash');
+});
