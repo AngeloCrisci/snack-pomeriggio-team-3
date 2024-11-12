@@ -24,6 +24,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->prefix('admin/')->group(function(){
-    Route::resource('posts', PostController::class);
-    Route::get('posts/trash', [PostController::class, 'trashed'])->name('trash');
+    Route::resource('posts', AdminPostController::class);
+    Route::get('posts/trash', [AdminPostController::class, 'trashed'])->name('trash');
 });
