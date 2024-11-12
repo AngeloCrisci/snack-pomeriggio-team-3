@@ -30,6 +30,7 @@ class Post extends Model
 
     protected $fillable = [
         'title',
+        'category_id',
         'author',
         'thumb',
         'date',

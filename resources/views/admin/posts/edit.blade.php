@@ -8,8 +8,9 @@
       <div class="row justify-content-center">
 
 
-        <form class="col-12  card p-4" method="POST" action="{{route("posts.store")}}">
+        <form class="col-12  card p-4" method="POST" action="{{route("posts.update" , $post)}}">
             @csrf
+            @method("PUT")
         <h1>Crea un nuovo post!:</h1>
 
           {{--

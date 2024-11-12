@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-12">
                         <div class="mb-3">
-                            <a href="#" class="btn btn-primary btn-lg">
+                            <a href="{{route("posts.create")}}" class="btn btn-primary btn-lg">
                                 Create new post
                             </a>
                         </div>
@@ -55,13 +55,13 @@
                                         {{ $post->description }}
                                     </td>
                                     <td class="d-flex flex-column gap-2">
-                                        <a href="/admin/posts/{{ $index + 1 }}" class="btn btn-sm btn-primary me-2">Show</a>
-                                        <a href="#"  class="btn btn-sm btn-success me-2">Edit</a>
+                                        <a href="{{route("posts.show" , $post)}}" class="btn btn-sm btn-primary me-2">Show</a>
+                                        <a href="{{route("posts.edit" , $post)}}"  class="btn btn-sm btn-success me-2">Edit</a>
 
-                                        <form class="d-inline env-destroyer" action="" method="POST" custom-data-name="{{ $post->name }}" >
-                                            @method("DELETE")
+                                        <form class="d-inline env-destroyer" action="{{route("posts.delete" , $post->id)}}" method="POST" custom-data-name="{{ $post->name }}" >
+
                                             @csrf
-
+                                            @method("DELETE")
                                             <button type="submit" class="btn btn-sm btn-warning me-2">
                                                 Delete
                                             </button>

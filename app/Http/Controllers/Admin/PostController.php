@@ -30,7 +30,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.craete');
+        return view('admin.posts.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class PostController extends Controller
         $formDatas = $request->validated();
         Post::create($formDatas);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -58,7 +58,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
 
-        return redirect()->route('admin.posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -69,7 +69,7 @@ class PostController extends Controller
         $formDatas = $request->validated();
         $post->update($formDatas);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.posts.index');
 
     }
 
