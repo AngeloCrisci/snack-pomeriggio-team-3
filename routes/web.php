@@ -21,7 +21,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/admin/posts/{id}', [AdminPostController::class, 'show'])->name("admin.posts.show");
 
 // Route Admin
 Route::get("/admin/posts", [AdminPostController::class, "index"])->name("posts.index");
