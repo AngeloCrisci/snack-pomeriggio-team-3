@@ -70,7 +70,6 @@ class PostController extends Controller
         $post->update($formDatas);
 
         return redirect()->route('admin.posts.index');
-
     }
 
     /**
@@ -80,10 +79,11 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('posts.index');
     }
 
-    public function treshed(){
+    public function treshed()
+    {
         $deletedPosts = Post::onlyTrashed()->get();
 
         return view('admin.pages.trash', compact('deletedPosts'));
